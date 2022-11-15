@@ -7,5 +7,9 @@
       "outDir": "scripts",
       "target": "es5",
       "watch" : true
+  },
+  "watchOptions": {
+    "watchFile": "useFsEvents",
+    "watchDirectory": "useFsEvents"
   }
 }
