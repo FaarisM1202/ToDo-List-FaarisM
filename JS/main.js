@@ -32,6 +32,7 @@ function displayToDoItem(item) {
     let itemDate = document.createElement("p");
     itemDate.innerText = item.dueDate.toDateString();
     let itemDiv = document.createElement("div");
+    itemDiv.onclick = markComplete;
     itemDiv.classList.add("todo");
     if (item.isCompleted) {
         itemDiv.classList.add("completed");
@@ -47,4 +48,8 @@ function displayToDoItem(item) {
         incompleted === null || incompleted === void 0 ? void 0 : incompleted.appendChild(itemDiv);
     }
 }
+function markComplete() {
+    alert("Completed has shown.");
+}
+alert("hello");
 //# sourceMappingURL=main.js.map

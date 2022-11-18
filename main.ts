@@ -56,6 +56,9 @@ function displayToDoItem(item:ToDoItem):void{
     itemDate.innerText = item.dueDate.toDateString();
 
     let itemDiv = document.createElement("div");
+    
+    itemDiv.onclick = markComplete;
+    
     itemDiv.classList.add("todo");
     
     if(item.isCompleted) {
@@ -73,4 +76,14 @@ function displayToDoItem(item:ToDoItem):void{
         let incompleted = document.getElementById("incomplete-items");
         incompleted?.appendChild(itemDiv);
     }
+}
+
+function markComplete() {
+    let itemDiv = <HTMLDivElement>this;
+    itemDiv.classList.add("completed");
+
+    let completedItems = document.getElementById("complete-items");
+
+    completedItems.appendChild(itemDiv);
+
 }
