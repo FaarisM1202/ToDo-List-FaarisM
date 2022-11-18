@@ -19,7 +19,9 @@ body {
     background-color: lightgreen;
     text-decoration: line-through;
 }
-
+/*
+Complete
+*/
 #complete-items {
     border: .2em solid greenyellow;
 }

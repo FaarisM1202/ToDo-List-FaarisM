@@ -69,7 +69,7 @@ function displayToDoItem(item:ToDoItem):void{
 
     let itemDiv = document.createElement("div");
     
-    itemDiv.onclick = markComplete;
+    itemDiv.onclick = markComplete; // complete
     
     itemDiv.classList.add("todo");
     
@@ -77,7 +77,7 @@ function displayToDoItem(item:ToDoItem):void{
         itemDiv.classList.add("completed");
     }
 
-    itemDiv.appendChild(itemText);
+    itemDiv.appendChild(itemText); 
     itemDiv.appendChild(itemDate);
 
     if(item.isCompleted) {
