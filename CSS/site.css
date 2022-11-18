@@ -1,0 +1,19 @@
+.todo {
+    width: 30%;
+    box-sizing: border-box;
+    background-color: lightcoral;
+    padding: .5em;
+    border-radius: .50em;
+}
+
+.todo h3 {
+    margin: 0px;
+}
+body {
+    background-color: rgb(42, 83, 218);
+}
+
+.completed {
+    opacity: 50%;
+    background-color: lightgreen;
+}

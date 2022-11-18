@@ -1,3 +1,4 @@
+
 //@ts-ignore
 class ToDoItem{
     title:string;
@@ -52,9 +53,11 @@ function displayToDoItem(item:ToDoItem):void{
     itemText.innerText = item.title;
 
     let itemDate = document.createElement("p");
-    itemDate.innerText = item.dueDate.toString();
+    itemDate.innerText = item.dueDate.toDateString();
 
     let itemDiv = document.createElement("div");
+    itemDiv.classList.add("todo");
+    
     if(item.isCompleted) {
         itemDiv.classList.add("completed");
     }
