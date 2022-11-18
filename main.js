@@ -2,12 +2,18 @@ class ToDoItem {
 }
 window.onload = function () {
     let addItem = document.getElementById("add");
-    addItem.onclick = process;
+    addItem.onclick = main;
+    loadSavedItem();
 };
-function process() {
+function loadSavedItem() {
+    let item = getToDo();
+    displayToDoItem(item);
+}
+function main() {
     if (isValid()) {
         let item = getToDoItem();
         displayToDoItem(item);
+        saveToDo(item);
     }
 }
 function isValid() {
@@ -30,7 +36,8 @@ function displayToDoItem(item) {
     let itemText = document.createElement("h3");
     itemText.innerText = item.title;
     let itemDate = document.createElement("p");
-    itemDate.innerText = item.dueDate.toDateString();
+    let dueDate = new Date(item.dueDate.toString());
+    itemDate.innerText = dueDate.toDateString();
     let itemDiv = document.createElement("div");
     itemDiv.onclick = markComplete;
     itemDiv.classList.add("todo");
@@ -53,5 +60,15 @@ function markComplete() {
     itemDiv.classList.add("completed");
     let completedItems = document.getElementById("complete-items");
     completedItems.appendChild(itemDiv);
+}
+function saveToDo(item) {
+    let itemString = JSON.stringify(item);
+    localStorage.setItem(todokey, itemString);
+}
+const todokey = "todo";
+function getToDo() {
+    let itemString = localStorage.getItem(todokey);
+    let item = JSON.parse(itemString);
+    return item;
 }
 //# sourceMappingURL=main.js.map
